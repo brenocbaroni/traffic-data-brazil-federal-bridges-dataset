@@ -1,0 +1,177 @@
+UF,VMDa_Class,n_group,n_total,n_umos,pass_C1,pass_C3,use_state_data,fallback_reason
+AC,A,605,3583,2,True,True,True,
+AC,B,969,3583,2,True,True,True,
+AC,C,172,3583,2,True,True,True,
+AC,D,148,3583,2,True,True,True,
+AC,E,983,3583,2,True,True,True,
+AC,F,320,3583,2,True,True,True,
+AC,G,2,3583,2,False,True,False,C1 fail: n=2 < 100
+AC,H,384,3583,2,True,True,True,
+AM,A,1025,7407,3,True,True,True,
+AM,B,2184,7407,3,True,True,True,
+AM,C,323,7407,3,True,True,True,
+AM,D,745,7407,3,True,True,True,
+AM,E,1173,7407,3,True,True,True,
+AM,F,445,7407,3,True,True,True,
+AM,G,17,7407,3,False,True,False,C1 fail: n=17 < 100
+AM,H,1495,7407,3,True,True,True,
+AP,A,46,2900,1,False,True,False,C1 fail: n=46 < 100
+AP,B,901,2900,1,True,True,True,
+AP,C,97,2900,1,False,True,False,C1 fail: n=97 < 100
+AP,D,87,2900,1,False,True,False,C1 fail: n=87 < 100
+AP,E,95,2900,1,False,True,False,C1 fail: n=95 < 100
+AP,F,184,2900,1,True,True,True,
+AP,G,0,2900,1,False,True,False,C1 fail: n=0 < 100
+AP,H,1490,2900,1,True,True,True,
+BA,A,1071,7217,2,True,True,True,
+BA,B,1483,7217,2,True,True,True,
+BA,C,540,7217,2,True,True,True,
+BA,D,869,7217,2,True,True,True,
+BA,E,2682,7217,2,True,True,True,
+BA,F,293,7217,2,True,True,True,
+BA,G,1,7217,2,False,True,False,C1 fail: n=1 < 100
+BA,H,278,7217,2,True,True,True,
+CE,A,212,2203,2,True,True,True,
+CE,B,616,2203,2,True,True,True,
+CE,C,153,2203,2,True,True,True,
+CE,D,213,2203,2,True,True,True,
+CE,E,601,2203,2,True,True,True,
+CE,F,66,2203,2,False,True,False,C1 fail: n=66 < 100
+CE,G,0,2203,2,False,True,False,C1 fail: n=0 < 100
+CE,H,342,2203,2,True,True,True,
+DF,A,957,5781,1,True,True,True,
+DF,B,1157,5781,1,True,True,True,
+DF,C,287,5781,1,True,True,True,
+DF,D,257,5781,1,True,True,True,
+DF,E,1645,5781,1,True,True,True,
+DF,F,734,5781,1,True,True,True,
+DF,G,9,5781,1,False,True,False,C1 fail: n=9 < 100
+DF,H,735,5781,1,True,True,True,
+ES,A,972,11641,2,True,True,True,
+ES,B,2060,11641,2,True,True,True,
+ES,C,801,11641,2,True,True,True,
+ES,D,1236,11641,2,True,True,True,
+ES,E,4180,11641,2,True,True,True,
+ES,F,1711,11641,2,True,True,True,
+ES,G,12,11641,2,False,True,False,C1 fail: n=12 < 100
+ES,H,669,11641,2,True,True,True,
+GO,A,1496,10149,1,True,True,True,
+GO,B,2186,10149,1,True,True,True,
+GO,C,694,10149,1,True,True,True,
+GO,D,624,10149,1,True,True,True,
+GO,E,3056,10149,1,True,True,True,
+GO,F,869,10149,1,True,True,True,
+GO,G,6,10149,1,False,True,False,C1 fail: n=6 < 100
+GO,H,1218,10149,1,True,True,True,
+MA,A,640,5846,2,True,True,True,
+MA,B,1236,5846,2,True,True,True,
+MA,C,415,5846,2,True,True,True,
+MA,D,311,5846,2,True,True,True,
+MA,E,1028,5846,2,True,True,True,
+MA,F,520,5846,2,True,True,True,
+MA,G,17,5846,2,False,True,False,C1 fail: n=17 < 100
+MA,H,1679,5846,2,True,True,True,
+MG,A,2376,23478,5,True,True,True,
+MG,B,5680,23478,5,True,True,True,
+MG,C,1591,23478,5,True,True,True,
+MG,D,1686,23478,5,True,True,True,
+MG,E,8933,23478,5,True,True,True,
+MG,F,1844,23478,5,True,True,True,
+MG,G,6,23478,5,False,True,False,C1 fail: n=6 < 100
+MG,H,1362,23478,5,True,True,True,
+MS,A,128,3274,1,True,True,True,
+MS,B,226,3274,1,True,True,True,
+MS,C,89,3274,1,False,True,False,C1 fail: n=89 < 100
+MS,D,70,3274,1,False,True,False,C1 fail: n=70 < 100
+MS,E,664,3274,1,True,True,True,
+MS,F,898,3274,1,True,True,True,
+MS,G,1,3274,1,False,True,False,C1 fail: n=1 < 100
+MS,H,1198,3274,1,True,True,True,
+MT,A,69,14577,3,False,True,False,C1 fail: n=69 < 100
+MT,B,765,14577,3,True,True,True,
+MT,C,165,14577,3,True,True,True,
+MT,D,382,14577,3,True,True,True,
+MT,E,1869,14577,3,True,True,True,
+MT,F,1353,14577,3,True,True,True,
+MT,G,46,14577,3,False,True,False,C1 fail: n=46 < 100
+MT,H,9928,14577,3,True,True,True,
+PA,A,4853,29608,2,True,True,True,
+PA,B,5376,29608,2,True,True,True,
+PA,C,2743,29608,2,True,True,True,
+PA,D,3794,29608,2,True,True,True,
+PA,E,8203,29608,2,True,True,True,
+PA,F,1435,29608,2,True,True,True,
+PA,G,106,29608,2,True,True,True,
+PA,H,3098,29608,2,True,True,True,
+PB,A,1369,4560,1,True,True,True,
+PB,B,1889,4560,1,True,True,True,
+PB,C,331,4560,1,True,True,True,
+PB,D,199,4560,1,True,True,True,
+PB,E,540,4560,1,True,True,True,
+PB,F,66,4560,1,False,True,False,C1 fail: n=66 < 100
+PB,G,0,4560,1,False,True,False,C1 fail: n=0 < 100
+PB,H,166,4560,1,True,True,True,
+PI,A,94,2849,2,False,True,False,C1 fail: n=94 < 100
+PI,B,697,2849,2,True,True,True,
+PI,C,264,2849,2,True,True,True,
+PI,D,160,2849,2,True,True,True,
+PI,E,680,2849,2,True,True,True,
+PI,F,124,2849,2,True,True,True,
+PI,G,4,2849,2,False,True,False,C1 fail: n=4 < 100
+PI,H,826,2849,2,True,True,True,
+PR,A,630,14820,2,True,True,True,
+PR,B,1779,14820,2,True,True,True,
+PR,C,962,14820,2,True,True,True,
+PR,D,351,14820,2,True,True,True,
+PR,E,4323,14820,2,True,True,True,
+PR,F,3912,14820,2,True,True,True,
+PR,G,6,14820,2,False,True,False,C1 fail: n=6 < 100
+PR,H,2857,14820,2,True,True,True,
+RJ,A,1892,2762,1,True,True,True,
+RJ,B,624,2762,1,True,True,True,
+RJ,C,91,2762,1,False,True,False,C1 fail: n=91 < 100
+RJ,D,79,2762,1,False,True,False,C1 fail: n=79 < 100
+RJ,E,73,2762,1,False,True,False,C1 fail: n=73 < 100
+RJ,F,0,2762,1,False,True,False,C1 fail: n=0 < 100
+RJ,G,0,2762,1,False,True,False,C1 fail: n=0 < 100
+RJ,H,3,2762,1,False,True,False,C1 fail: n=3 < 100
+RN,A,690,3979,1,True,True,True,
+RN,B,1117,3979,1,True,True,True,
+RN,C,281,3979,1,True,True,True,
+RN,D,513,3979,1,True,True,True,
+RN,E,1014,3979,1,True,True,True,
+RN,F,95,3979,1,False,True,False,C1 fail: n=95 < 100
+RN,G,1,3979,1,False,True,False,C1 fail: n=1 < 100
+RN,H,268,3979,1,True,True,True,
+RO,A,460,8786,2,True,True,True,
+RO,B,935,8786,2,True,True,True,
+RO,C,367,8786,2,True,True,True,
+RO,D,210,8786,2,True,True,True,
+RO,E,2027,8786,2,True,True,True,
+RO,F,1130,8786,2,True,True,True,
+RO,G,11,8786,2,False,True,False,C1 fail: n=11 < 100
+RO,H,3646,8786,2,True,True,True,
+RS,A,185,2322,1,True,True,True,
+RS,B,531,2322,1,True,True,True,
+RS,C,147,2322,1,True,True,True,
+RS,D,227,2322,1,True,True,True,
+RS,E,679,2322,1,True,True,True,
+RS,F,475,2322,1,True,True,True,
+RS,G,1,2322,1,False,True,False,C1 fail: n=1 < 100
+RS,H,77,2322,1,False,True,False,C1 fail: n=77 < 100
+SC,A,383,5198,1,True,True,True,
+SC,B,1054,5198,1,True,True,True,
+SC,C,546,5198,1,True,True,True,
+SC,D,106,5198,1,True,True,True,
+SC,E,1780,5198,1,True,True,True,
+SC,F,732,5198,1,True,True,True,
+SC,G,1,5198,1,False,True,False,C1 fail: n=1 < 100
+SC,H,596,5198,1,True,True,True,
+TO,A,187,5020,1,True,True,True,
+TO,B,1012,5020,1,True,True,True,
+TO,C,537,5020,1,True,True,True,
+TO,D,655,5020,1,True,True,True,
+TO,E,1936,5020,1,True,True,True,
+TO,F,352,5020,1,True,True,True,
+TO,G,1,5020,1,False,True,False,C1 fail: n=1 < 100
+TO,H,340,5020,1,True,True,True,

@@ -1,0 +1,1163 @@
+stpg_contract:
+  schema_version: 2.0.0
+  generator: traffic-data-brazil-federal-bridges/STPG_Contract
+  generated_at: '2026-06-14T16:11:27'
+  weighing_dataset: DNIT-2023
+  uf: SC
+  nomenclature: QFV-2022
+  units:
+    weight: kN
+    length: m
+  conventions:
+    regression_params_unit: tf
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+    sim_bounds_method: computed
+    sim_bounds_reference: Rossigali (2013), Secao 2.6.5, Eqs. 2.9/2.10
+    geometry: axle_widths/distancias/velocidades completados no lado STPG
+  sources:
+    coefficients: Axle_Load/resultados/coeficientes_regressao_2023.csv
+    composition: Frequency/data/processed/peso_2023/umo_qfv_share_scaled_all_ufs.csv
+    weights: gwt:GWT/data/processed/ajustes_distribuicoes_2023_balanceado_UMO.xlsx
+  composition_coverage: 0.996051
+axle_groups:
+- name: GSRD
+  num_axles: 1
+  axle_types:
+  - SRD
+- name: GSRS
+  num_axles: 1
+  axle_types:
+  - SRS
+- name: GTD
+  num_axles: 2
+  axle_types:
+  - SRD
+  - SRD
+- name: GTS
+  num_axles: 2
+  axle_types:
+  - SRS
+  - SRS
+- name: GTT
+  num_axles: 3
+  axle_types:
+  - SRD
+  - SRD
+  - SRD
+vehicle_classes:
+- name: C1
+  groups:
+  - GSRS
+  - GSRS
+  weight_distribution:
+    type: random_continuous
+    distribution: frechet_max
+    mean: 52.63232172043391
+    std: 23.784540680830265
+    lower: -90.56572671006086
+    sim_lower: 17.75464662839868
+    sim_upper: 165.75867174123138
+  axle_group_weight_regressions:
+  - code: 13
+    params:
+    - 0.871582
+    - 0.297411
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -0.871582
+    - 0.702589
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+- name: C2
+  groups:
+  - GSRS
+  - GSRD
+  weight_distribution:
+    type: random_continuous
+    distribution: gamma
+    mean: 98.21606792319693
+    std: 37.49043113119238
+    lower: 13.26630420388907
+    sim_lower: 19.745784823959198
+    sim_upper: 268.65661253723084
+  axle_group_weight_regressions:
+  - code: 13
+    params:
+    - 0.996186
+    - 0.306354
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -0.996186
+    - 0.693646
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+- name: C3
+  groups:
+  - GSRS
+  - GTD
+  weight_distribution:
+    type: random_continuous
+    distribution: gumbel_min
+    mean: 186.15193222943063
+    std: 64.26614819006181
+    sim_lower: 42.14591620938406
+    sim_upper: 436.41601095423067
+  axle_group_weight_regressions:
+  - code: 13
+    params:
+    - 2.962741
+    - 0.124174
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -2.962741
+    - 0.875826
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+- name: C7
+  groups:
+  - GTS
+  - GTD
+  weight_distribution:
+    type: random_continuous
+    distribution: gumbel_min
+    mean: 254.3501305736301
+    std: 63.55994747283395
+    sim_lower: 63.642149652435606
+    sim_upper: 523.4818172690228
+  axle_group_weight_regressions:
+  - code: 13
+    params:
+    - 4.071706
+    - 0.24906
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -4.071706
+    - 0.75094
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+- name: CR1
+  groups:
+  - GSRS
+  - GSRD
+  - GSRD
+  - GSRD
+  weight_distribution:
+    type: random_continuous
+    distribution: laplace
+    mean: 212.38649999999998
+    std: 61.61756112618215
+    sim_lower: 57.53730822816348
+    sim_upper: 508.2156484603903
+  axle_group_weight_regressions:
+  - code: 13
+    params:
+    - 2.419002
+    - 0.137305
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -0.74233
+    - 0.36178
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -1.430219
+    - 0.294999
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -0.246454
+    - 0.205916
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+- name: CR10
+  groups:
+  - GTS
+  - GTD
+  - GSRD
+  - GSRD
+  weight_distribution:
+    type: random_continuous
+    distribution: beta
+    mean: 399.23932530181366
+    std: 73.76216310918167
+    lower: 233.466860788631
+    upper: 548.2855709567629
+    sim_lower: 103.90448100277872
+    sim_upper: 737.085288361681
+  axle_group_weight_regressions:
+  - code: 13
+    params:
+    - 2.465662
+    - 0.259986
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - 0.878048
+    - 0.312064
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -1.390973
+    - 0.215261
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -1.952736
+    - 0.212689
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+- name: CR11
+  groups:
+  - GTS
+  - GTD
+  - GSRD
+  - GTD
+  weight_distribution:
+    type: random_continuous
+    distribution: gumbel_min
+    mean: 523.3473955931025
+    std: 70.36038136455359
+    sim_lower: 96.35670450641624
+    sim_upper: 944.3760984866855
+  axle_group_weight_regressions:
+  - code: 13
+    params:
+    - 3.794034
+    - 0.137037
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -1.716225
+    - 0.391789
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - 0.553048
+    - 0.142244
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -2.630857
+    - 0.328931
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+- name: CR4
+  groups:
+  - GSRS
+  - GTD
+  - GSRD
+  - GSRD
+  weight_distribution:
+    type: random_continuous
+    distribution: weibull_min
+    mean: 315.44634557872973
+    std: 95.90242663112849
+    lower: 162.5523642037814
+    sim_lower: 78.56960499219167
+    sim_upper: 768.4438098765432
+  axle_group_weight_regressions:
+  - code: 13
+    params:
+    - 3.80233
+    - 0.067246
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -1.117951
+    - 0.47385
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -1.117578
+    - 0.225821
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -1.566801
+    - 0.233084
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+- name: CR5
+  groups:
+  - GSRS
+  - GTD
+  - GSRD
+  - GTD
+  weight_distribution:
+    type: random_continuous
+    distribution: weibull_min
+    mean: 405.8596629564249
+    std: 86.40794292310609
+    lower: -118.4286544430509
+    sim_lower: 92.59885568718654
+    sim_upper: 839.1986358362109
+  axle_group_weight_regressions:
+  - code: 13
+    params:
+    - 3.937604
+    - 0.064071
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -0.714812
+    - 0.429186
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -0.843648
+    - 0.191131
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -2.379144
+    - 0.315613
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+- name: CR6
+  groups:
+  - GSRS
+  - GTD
+  - GTD
+  - GTD
+  weight_distribution:
+    type: random_continuous
+    distribution: laplace
+    mean: 554.2650000000001
+    std: 69.25445357464442
+    sim_lower: 191.93377672281775
+    sim_upper: 897.0118777947933
+  axle_group_weight_regressions:
+  - code: 13
+    params:
+    - 1.371283
+    - 0.090686
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -8.782015
+    - 0.48975
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - 5.424015
+    - 0.180823
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - 1.986718
+    - 0.238742
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+- name: CTS1
+  groups:
+  - GSRS
+  - GSRD
+  - GSRD
+  weight_distribution:
+    type: random_continuous
+    distribution: beta
+    mean: 171.23736692248056
+    std: 37.59621546262312
+    lower: 116.8343326374451
+    upper: 325.71272756808526
+    sim_lower: 72.7569066161663
+    sim_upper: 386.8488005435702
+  axle_group_weight_regressions:
+  - code: 13
+    params:
+    - 2.306331
+    - 0.142618
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -3.676901
+    - 0.549699
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - 1.37057
+    - 0.307683
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+- name: CTS10
+  groups:
+  - GSRS
+  - GTD
+  - GTT
+  weight_distribution:
+    type: random_continuous
+    distribution: laplace
+    mean: 459.9909
+    std: 66.94063203446673
+    sim_lower: 83.3905293895331
+    sim_upper: 931.9760328773104
+  axle_group_weight_regressions:
+  - code: 13
+    params:
+    - 4.476661
+    - 0.029675
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -0.158522
+    - 0.356467
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -4.318139
+    - 0.613858
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+- name: CTS11
+  groups:
+  - GSRS
+  - GTD
+  - GSRD
+  - GTT
+  weight_distribution:
+    type: random_continuous
+    distribution: gumbel_min
+    mean: 556.7894056284347
+    std: 63.39398243210076
+    sim_lower: 140.77716819744728
+    sim_upper: 1044.0059391282787
+  axle_group_weight_regressions:
+  - code: 13
+    params:
+    - 4.383024
+    - 0.028118
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - 1.792886
+    - 0.265444
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - 1.200253
+    - 0.129717
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -7.376162
+    - 0.576721
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+- name: CTS13
+  groups:
+  - GSRS
+  - GTD
+  - GSRD
+  - GTD
+  weight_distribution:
+    type: random_continuous
+    distribution: beta
+    mean: 459.42437970480694
+    std: 67.10188849647963
+    lower: -186.8773909711108
+    upper: 565.31480035089
+    sim_lower: 133.32231009850696
+    sim_upper: 825.6700290476865
+  axle_group_weight_regressions:
+  - code: 13
+    params:
+    - 4.636458
+    - 0.027432
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -0.152868
+    - 0.334029
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - 1.73323
+    - 0.136951
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -6.21682
+    - 0.501589
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+- name: CTS15
+  groups:
+  - GSRS
+  - GTD
+  - GSRD
+  - GSRD
+  - GSRD
+  weight_distribution:
+    type: random_continuous
+    distribution: gumbel_min
+    mean: 489.6379969654665
+    std: 52.54615215940762
+    sim_lower: 137.8929899640449
+    sim_upper: 838.5818269312254
+  axle_group_weight_regressions:
+  - code: 13
+    params:
+    - 4.771878
+    - 0.023421
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - 0.001473
+    - 0.330708
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - 1.316456
+    - 0.154031
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -3.183295
+    - 0.247809
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -2.906512
+    - 0.244032
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+- name: CTS19
+  groups:
+  - GSRS
+  - GTD
+  - GTD
+  weight_distribution:
+    type: random_continuous
+    distribution: gumbel_min
+    mean: 318.0714190144955
+    std: 77.37239057129295
+    sim_lower: 73.66519667468908
+    sim_upper: 728.1619239460457
+  axle_group_weight_regressions:
+  - code: 13
+    params:
+    - 5.114403
+    - 0.019777
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -1.730047
+    - 0.449626
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -3.384356
+    - 0.530597
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+- name: CTS2
+  groups:
+  - GSRS
+  - GSRD
+  - GTD
+  weight_distribution:
+    type: random_continuous
+    distribution: gamma
+    mean: 228.252965731518
+    std: 59.83534657469239
+    lower: 115.3473963612658
+    sim_lower: 77.99960352085603
+    sim_upper: 557.5035396139874
+  axle_group_weight_regressions:
+  - code: 13
+    params:
+    - 3.780373
+    - 0.067003
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - 0.604071
+    - 0.306104
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -4.384445
+    - 0.626893
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+- name: CTS22
+  groups:
+  - GTS
+  - GTD
+  - GTT
+  weight_distribution:
+    type: random_continuous
+    distribution: gumbel_min
+    mean: 516.8979649937883
+    std: 45.69759205126029
+    sim_lower: 67.03689779461178
+    sim_upper: 1030.8897997678469
+  axle_group_weight_regressions:
+  - code: 13
+    params:
+    - 3.678393
+    - 0.122121
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -1.549018
+    - 0.343749
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -2.129375
+    - 0.53413
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+- name: CTS3
+  groups:
+  - GSRS
+  - GSRD
+  - GSRD
+  - GSRD
+  weight_distribution:
+    type: random_continuous
+    distribution: gumbel_min
+    mean: 277.74522806598605
+    std: 81.58672007964667
+    sim_lower: 99.02535222392399
+    sim_upper: 590.5987596927754
+  axle_group_weight_regressions:
+  - code: 13
+    params:
+    - 3.567005
+    - 0.073409
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - 2.641148
+    - 0.226497
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -2.942564
+    - 0.346867
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -3.265589
+    - 0.353227
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+- name: CTS4
+  groups:
+  - GSRS
+  - GSRD
+  - GTT
+  weight_distribution:
+    type: random_continuous
+    distribution: gumbel_min
+    mean: 346.96042570037787
+    std: 77.95040345329565
+    sim_lower: 84.42316068140603
+    sim_upper: 691.4872617200663
+  axle_group_weight_regressions:
+  - code: 13
+    params:
+    - 4.24435
+    - 0.039421
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - 1.053205
+    - 0.240421
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -5.297555
+    - 0.720158
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+- name: CTS5
+  groups:
+  - GSRS
+  - GSRD
+  - GSRD
+  - GTD
+  weight_distribution:
+    type: random_continuous
+    distribution: laplace
+    mean: 405.9378
+    std: 53.623741043386175
+    sim_lower: 79.9698449822305
+    sim_upper: 750.0799639271221
+  axle_group_weight_regressions:
+  - code: 13
+    params:
+    - 3.621205
+    - 0.059301
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - 0.87348
+    - 0.223991
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -1.000286
+    - 0.214443
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -3.494399
+    - 0.502265
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+- name: CTS6
+  groups:
+  - GSRS
+  - GSRD
+  - GSRD
+  - GSRD
+  - GSRD
+  weight_distribution:
+    type: random_continuous
+    distribution: weibull_min
+    mean: 387.2237038612366
+    std: 84.32942963945673
+    lower: -2413112837.391027
+    sim_lower: 107.08914909077359
+    sim_upper: 752.5832574300008
+  axle_group_weight_regressions:
+  - code: 13
+    params:
+    - 4.041307
+    - 0.048488
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - 1.053835
+    - 0.220895
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - 0.061544
+    - 0.200414
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -2.527181
+    - 0.261843
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -2.629505
+    - 0.26836
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+- name: CTS8
+  groups:
+  - GSRS
+  - GTD
+  - GSRD
+  - GSRD
+  weight_distribution:
+    type: random_continuous
+    distribution: beta
+    mean: 361.09063739715236
+    std: 67.92569534491355
+    lower: -101.1829062575658
+    upper: 468.91251587317026
+    sim_lower: 93.49424025361179
+    sim_upper: 693.7721899253617
+  axle_group_weight_regressions:
+  - code: 13
+    params:
+    - 5.498636
+    - 0.009804
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -1.620261
+    - 0.436759
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -1.421573
+    - 0.264176
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -2.456803
+    - 0.289261
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+- name: CTSR6+
+  groups:
+  - GSRS
+  - GTD
+  - GTD
+  - GTD
+  - GTD
+  weight_distribution:
+    type: random_continuous
+    distribution: laplace
+    mean: 735.2595000000001
+    std: 53.78376494772645
+    sim_lower: 178.3416206051028
+    sim_upper: 1356.1045513618376
+  axle_group_weight_regressions:
+  - code: 13
+    params:
+    - 4.093301
+    - 0.027923
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - 3.978727
+    - 0.171839
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -2.624223
+    - 0.279116
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -0.687395
+    - 0.226263
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -4.760411
+    - 0.294859
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+- name: CTSS11+
+  groups:
+  - GSRS
+  - GTD
+  - GTT
+  - GTD
+  weight_distribution:
+    type: random_continuous
+    distribution: laplace
+    mean: 645.0075
+    std: 65.8695422519392
+    sim_lower: 172.72268617423498
+    sim_upper: 1145.3209755277853
+  axle_group_weight_regressions:
+  - code: 13
+    params:
+    - 5.121049
+    - 0.01442
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - 2.933012
+    - 0.231331
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -2.367413
+    - 0.397192
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -5.686648
+    - 0.357058
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+- name: CTSS12+
+  groups:
+  - GSRS
+  - GTD
+  - GTT
+  - GTT
+  weight_distribution:
+    type: random_continuous
+    distribution: laplace
+    mean: 732.807
+    std: 82.086706897722
+    sim_lower: 146.12606861437752
+    sim_upper: 1448.023626419759
+  axle_group_weight_regressions:
+  - code: 13
+    params:
+    - 4.827635
+    - 0.018238
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - 3.007911
+    - 0.208166
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -2.960467
+    - 0.385893
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -4.875078
+    - 0.387703
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+- name: CTSS7
+  groups:
+  - GSRS
+  - GSRD
+  - GTD
+  - GTD
+  weight_distribution:
+    type: random_continuous
+    distribution: laplace
+    mean: 341.8785
+    std: 78.64669370227871
+    sim_lower: 96.0213488737559
+    sim_upper: 791.0284269637863
+  axle_group_weight_regressions:
+  - code: 13
+    params:
+    - 4.690165
+    - 0.034202
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -0.078104
+    - 0.224197
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -1.8113
+    - 0.394164
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -2.800761
+    - 0.347438
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+- name: CTSS8
+  groups:
+  - GSRS
+  - GTD
+  - GTD
+  - GTD
+  weight_distribution:
+    type: random_continuous
+    distribution: laplace
+    mean: 560.6415000000001
+    std: 51.506493934690795
+    sim_lower: 123.77920548771712
+    sim_upper: 1084.9157175713226
+  axle_group_weight_regressions:
+  - code: 13
+    params:
+    - 4.262819
+    - 0.031357
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - 0.348573
+    - 0.296938
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -0.652431
+    - 0.310389
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -3.958961
+    - 0.361316
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+- name: CTSS8+
+  groups:
+  - GSRS
+  - GTD
+  - GTD
+  - GTD
+  weight_distribution:
+    type: random_continuous
+    distribution: laplace
+    mean: 561.6225000000001
+    std: 47.12343437590265
+    sim_lower: 119.8551857576439
+    sim_upper: 1095.7825688511691
+  axle_group_weight_regressions:
+  - code: 13
+    params:
+    - 3.566433
+    - 0.041385
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - 0.217295
+    - 0.300265
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -0.036198
+    - 0.302509
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -3.74753
+    - 0.35584
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+- name: CTSSS7+
+  groups:
+  - GSRS
+  - GTD
+  - GTD
+  - GTD
+  - GTD
+  weight_distribution:
+    type: random_continuous
+    distribution: logistic
+    mean: 726.4774065698944
+    std: 42.36443256014722
+    sim_lower: 170.78643060651618
+    sim_upper: 1232.4818013732668
+  axle_group_weight_regressions:
+  - code: 13
+    params:
+    - 4.121152
+    - 0.027388
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - 5.109688
+    - 0.156857
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -4.199134
+    - 0.319967
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -4.367796
+    - 0.285351
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+  - code: 13
+    params:
+    - -0.66391
+    - 0.210436
+    input_scale: 0.1019367991845056
+    output_scale: 9.81
+traffic_composition:
+  C1: 0.0003781730804562198
+  C2: 0.22819376889261203
+  C3: 0.2207420246724799
+  C7: 0.15502777611913912
+  CR1: 0.0005296857307010902
+  CR10: 0.00017393920716385147
+  CR11: 0.0005927790760199872
+  CR4: 0.0060042120537643325
+  CR5: 0.005998965937400853
+  CR6: 0.007752922210838281
+  CTS1: 1.1446900263040863e-05
+  CTS10: 0.15270860556625324
+  CTS11: 0.006485352281542661
+  CTS13: 0.000621810345531613
+  CTS15: 0.03370899236127663
+  CTS19: 0.015957863546808056
+  CTS2: 0.008011506923170096
+  CTS22: 0.002055714817001236
+  CTS3: 0.003796326287557453
+  CTS4: 0.057335103730301124
+  CTS5: 0.0019767537894700106
+  CTS6: 0.003894232015189881
+  CTS8: 0.007247827438690158
+  CTSR6+: 0.0056974716256419375
+  CTSS11+: 0.0019551339496470237
+  CTSS12+: 0.0448322298153142
+  CTSS7: 0.00011907488994677877
+  CTSS8: 0.02702118319445077
+  CTSS8+: 0.0011668530952115184
+  CTSSS7+: 2.2704461569590908e-06

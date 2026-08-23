@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use these data, please cite the dataset and the associated article."
+type: dataset
+title: "Data for Multi-State Heavy-Vehicle Weight Distributions on the Brazilian Federal Highway Network"
+version: 1.0.0
+date-released: 2026-08-23
+url: "https://github.com/brenocbaroni/traffic-data-brazil-federal-bridges-dataset"
+repository-code: "https://github.com/brenocbaroni/traffic-data-brazil-federal-bridges-dataset"
+authors:
+  - family-names: Baroni
+    given-names: Breno Campos
+    orcid: "https://orcid.org/0009-0003-2898-2878"
+  - family-names: Pfeil
+    given-names: Michèle Schubert
+  - family-names: Sagrilo
+    given-names: Luis Volnei Sudati

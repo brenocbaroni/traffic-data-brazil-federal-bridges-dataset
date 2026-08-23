@@ -1,0 +1,24 @@
+# This is a data-only repository. Prevent accidental publication of code.
+*.py
+*.ipynb
+*.R
+*.Rmd
+*.jl
+*.m
+*.tex
+
+# Local environments and temporary files
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+.Rhistory
+.DS_Store
+Thumbs.db
+tmp/
+
+# Manuscript and editor artifacts
+paper/
+*.aux
+*.log
+*.synctex.gz

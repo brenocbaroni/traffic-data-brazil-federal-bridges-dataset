@@ -1,0 +1,90 @@
+{
+  "lb10|M+": {
+    "u": 508.30795595557265,
+    "tail_target": 1000,
+    "censored": false,
+    "min_recorded": 350.00237312047926,
+    "n_tail_min": 1000,
+    "n_tail_max": 102242
+  },
+  "lb10|V": {
+    "u": 226.0039624231419,
+    "tail_target": 1000,
+    "censored": false,
+    "min_recorded": 160.0001346092977,
+    "n_tail_min": 1000,
+    "n_tail_max": 96027
+  },
+  "lb20|M+": {
+    "u": 1434.2611932797186,
+    "tail_target": 1000,
+    "censored": false,
+    "min_recorded": 900.0040516408837,
+    "n_tail_min": 1000,
+    "n_tail_max": 105185
+  },
+  "lb20|V": {
+    "u": 338.4882288555066,
+    "tail_target": 1000,
+    "censored": false,
+    "min_recorded": 195.00005905828323,
+    "n_tail_min": 1000,
+    "n_tail_max": 106558
+  },
+  "lb30|M+": {
+    "u": 2698.4347035761202,
+    "tail_target": 1000,
+    "censored": false,
+    "min_recorded": 1520.0023319560412,
+    "n_tail_min": 1000,
+    "n_tail_max": 111160
+  },
+  "lb30|V": {
+    "u": 393.06789858628133,
+    "tail_target": 1000,
+    "censored": false,
+    "min_recorded": 205.00005474892149,
+    "n_tail_min": 1000,
+    "n_tail_max": 111071
+  },
+  "lb50_5lg|M+": {
+    "u": 2374.971245722529,
+    "tail_target": 1000,
+    "censored": false,
+    "min_recorded": 1255.0005100693431,
+    "n_tail_min": 1000,
+    "n_tail_max": 107108
+  },
+  "lb50_5lg|V": {
+    "u": 250.09394524101415,
+    "tail_target": 1000,
+    "censored": false,
+    "min_recorded": 130.00002235125046,
+    "n_tail_min": 1000,
+    "n_tail_max": 106183
+  },
+  "lc20|M+": {
+    "u": 1161.2671180957568,
+    "tail_target": 1000,
+    "censored": false,
+    "min_recorded": 740.0023951522437,
+    "n_tail_min": 1000,
+    "n_tail_max": 96835
+  },
+  "lc20|M-": {
+    "u": 797.8027873049663,
+    "tail_target": 1000,
+    "censored": false,
+    "min_recorded": 435.00096604084774,
+    "n_tail_min": 1000,
+    "n_tail_max": 116245
+  },
+  "lc20|V": {
+    "u": 342.9643761211122,
+    "tail_target": 1000,
+    "censored": false,
+    "min_recorded": 195.0000800375755,
+    "n_tail_min": 1000,
+    "n_tail_max": 109478
+  }
+}
