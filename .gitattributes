@@ -1,1 +1,10 @@
 *.xlsx filter=lfs diff=lfs merge=lfs -text
+
+# Text data are stored and checked out with LF on every platform, so that the
+# SHA-256 checksums in metadata/FILES.csv match the files users download.
+*.csv text eol=lf
+*.json text eol=lf
+*.yaml text eol=lf
+*.md text eol=lf
+*.cff text eol=lf
+*.gz binary

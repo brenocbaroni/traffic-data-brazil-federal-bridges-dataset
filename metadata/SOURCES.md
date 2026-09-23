@@ -21,4 +21,12 @@ The derived traffic tables follow three main layers:
 2. **Intra-group class proportions (UCP/IGCP):** QFV class proportions conditional on axle group, balanced equally across UMOs within each state.
 3. **Integrated class shares (ICS):** AGS multiplied by UCP and normalized within state.
 
-The `traffic-contracts` files combine 2023 ICS values with station-balanced gross-weight fits and axle-group load regressions. The numerical simulation-result files are frozen exports supporting the figures and tables in the associated manuscript; simulation histories and source code are intentionally excluded.
+The `traffic-contracts` files combine 2023 ICS values with station-balanced gross-weight fits and axle-group load regressions. They are the exact inputs used in the structural simulations.
+
+`data/processed/state_groups_aadtt.csv` reproduces the per-state composition group and busiest-corridor AADTT that supported the manuscript's composition groups.
+
+## Simulation results
+
+The files in `data/simulation-results/` are frozen exports (results computed on 14–15 September 2026 and exported on 23 September 2026) of the free-flow simulations used in the manuscript: seven state traffic streams and the traffic of Rossigali (2013), four lane layouts, twelve bridges and 30 days per combination. Characteristic effects come from generalized Pareto fits above a threshold common to all streams, with the shape parameter restricted to non-positive values. The TB-45 reference is the literal NBR 7188 model and the Portela reference includes multiple-presence factors. The Rossigali traffic appears only through its simulated effects, and its source database is not redistributed. Simulation histories, intermediate files and source code are intentionally excluded.
+
+Version 2.0.0 replaced the results of version 1.0.0 (ten bridges, Weibull extrapolation, controlled factorial and robustness studies), which no longer correspond to the manuscript. They remain available in the Git history of the repository.

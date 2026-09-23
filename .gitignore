@@ -6,6 +6,21 @@
 *.jl
 *.m
 *.tex
+*.sh
+*.ps1
+*.bat
+*.cmd
+*.js
+*.ts
+*.sql
+*.f
+*.f90
+*.for
+*.c
+*.cpp
+*.h
+*.xlsm
+node_modules/
 
 # Local environments and temporary files
 .venv/

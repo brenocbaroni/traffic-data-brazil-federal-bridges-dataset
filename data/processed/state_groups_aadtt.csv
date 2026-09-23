@@ -1,0 +1,28 @@
+uf,state,share_6plus_axles_2023_pct,composition_group,corridor_2023,lanes_per_direction_2023,aadtt_dir_2021,aadtt_dir_2023
+AC,Acre,30.5,intermediate,BR-364,1,,313
+AL,Alagoas,14.9,light,BR-104,2,542,2240
+AM,Amazonas,36.2,heavy,BR-174,1,,329
+AP,Amapá,,,,,,
+BA,Bahia,23.0,intermediate,BR-324,2,5000,4541
+CE,Ceará,19.9,light,BR-116,1,1942,2103
+DF,Distrito Federal,11.7,light,BR-010,2,,3511
+ES,Espírito Santo,19.5,light,BR-101,1,2606,2546
+GO,Goiás,35.0,heavy,BR-060,2,3166,3297
+MA,Maranhão,27.4,intermediate,BR-135,1,1725,1994
+MG,Minas Gerais,31.9,intermediate,BR-381,2,6466,6470
+MS,Mato Grosso do Sul,42.0,heavy,BR-060,1,1644,1755
+MT,Mato Grosso,58.3,heavy,BR-070,2,3403,4232
+PA,Pará,44.1,heavy,BR-010,1,1861,1482
+PB,Paraíba,10.1,light,BR-101,2,2739,2635
+PE,Pernambuco,15.6,light,BR-232,2,3072,3100
+PI,Piauí,24.8,intermediate,BR-316,1,631,1387
+PR,Paraná,33.9,intermediate,BR-116,2,7061,7699
+RJ,Rio de Janeiro,14.6,light,BR-116,2,6387,6230
+RN,Rio Grande do Norte,11.9,light,BR-101,2,2244,2300
+RO,Rondônia,48.4,heavy,BR-364,1,,1407
+RR,Roraima,32.2,intermediate,BR-174,1,,345
+RS,Rio Grande do Sul,25.8,intermediate,BR-116,2,6047,5058
+SC,Santa Catarina,29.3,intermediate,BR-101,2,6691,8414
+SE,Sergipe,15.8,light,BR-101,2,3153,2808
+SP,São Paulo,20.0,light,BR-116,2,8900,7499
+TO,Tocantins,41.9,heavy,BR-153,1,1159,1562
