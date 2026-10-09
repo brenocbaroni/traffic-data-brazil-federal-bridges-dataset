@@ -12,7 +12,7 @@
 - **UCP/IGCP:** class share conditional on axle group, balanced across UMOs.
 - **ICS:** integrated class share obtained from AGS × UCP.
 - **Q117:** characteristic load effect with a 35% probability of exceedance in 50 years, that is, a 117-year return period.
-- **Lane layouts:** `2o` two lanes in opposite directions; `2s` two lanes in the same direction; `3s` three lanes in the same direction; `3o` three lanes, one of them opposing. When lanes share a direction, the directional flow is split 0.85/0.15 (two lanes) or 0.80/0.18/0.02 (three lanes).
+- **Lane layouts:** `2o` two lanes in opposite directions; `2s` two lanes in the same direction; `3s` three lanes in the same direction; `3o` three lanes, one of them opposing. A lane alone in its direction carries the whole directional flow, and when lanes share a direction the flow is split 0.85/0.15 (two lanes) or 0.80/0.18/0.02 (three lanes).
 - **Bridges:** `S-` simply supported and `C-` two-span continuous, followed by the span in metres (each span of the continuous decks). Spans of 10, 20 and 30 m have two girders and spans of 30, 40 and 50 m five girders; the asterisk (`S-30*`, `C-30*`) marks the five-girder 30 m decks. All decks are 13 m wide.
 - **Load effects:** `M+` positive bending moment, `M-` negative bending moment (continuous decks only), `V` shear. Moments in kN.m, shear in kN.
 - **Streams:** state traffic streams `PB`, `RJ`, `SP` (SP corridors), `MG`, `PR`, `SC`, `MT`, and `ROSSIGALI`, the traffic of Rossigali (2013) simulated with the same rules.
@@ -82,9 +82,14 @@ One row per UF, axle group, and QFV class after integrating counts and weighing.
 
 ### Fitted-model files
 
-- `gvw_distribution_fits_station_balanced.xlsx`: class-specific parametric GVW fits after equal weighting of UMOs.
 - `axle_group_load_regressions.csv`: coefficients relating axle-group loads to GVW by vehicle class/group.
-- `traffic-contracts/stpg_contract_<UF>.yaml`: complete numeric traffic input for each simulated state traffic stream; weights are expressed in kN and lengths in m as declared inside each file.
+- `2023/gvw_models.csv`: gross-vehicle-weight model of each of the 30 simulated classes, fitted to the national distribution of the class in the 2023 weighing records with every record weighted equally (one row per class).
+  - `vehicle_class`, `n_records`: QFV class and number of records fitted.
+  - `model`: `body + GPD tail` for the 20 classes with at least 1,000 records, or a single distribution for the other ten.
+  - `body_components`: distribution of the body (or of the whole model) selected by the procedure of Rossigali (2013), with the weight, mean and standard deviation of each mode in tonnes.
+  - `tail_threshold_p95_t`, `tail_gpd_scale_t`, `tail_gpd_shape`: 95th percentile of the records, above which the generalized Pareto tail applies, and its scale (t) and shape.
+  - `lower_limit_t`, `upper_limit_t`: physical weight limits of the class, at which the model is truncated.
+- `traffic-contracts/stpg_contract_<UF>.yaml`: complete numeric traffic input for each simulated state traffic stream; weights are expressed in kN and lengths in m as declared inside each file. The class weight distributions are the models of `gvw_models.csv` as sampled by the simulator, tabulated at 0.25 t (`discrete_histogram`, with the `lower` and `upper` bounds of each interval in kN and its probability `freq`), except the classes with fewer than 1,000 records, which keep a parametric distribution.
 - `traffic-contracts/lane_headways_by_uf.csv`: state directional traffic volumes and associated mean headways used in traffic generation.
 
 ### `state_groups_aadtt.csv`
@@ -105,26 +110,25 @@ One row per federal unit (27 rows; Amapá has no eligible count location and is 
 
 ## Simulation results
 
-Each of the 336 combinations of stream, lane layout and bridge was simulated for 30 independent days of free-flow traffic, recording the peak effect of every loading event. For each case, load effect and lane layout, only the peaks above a threshold common to all streams enter the extrapolation. The threshold is set so that the state stream with the fewest peaks keeps 200. The peaks are fitted with a generalized Pareto distribution whose shape parameter is restricted to non-positive values and extrapolated from 30 days to Q117. All bridge, girder and effect columns share the conventions above; `bridge`, `system`, `span_m` and `n_girders` describe the deck.
+Each of the 336 combinations of stream, lane layout and bridge was simulated for 30 independent days of free-flow traffic, recording the peak effect of every loading event. For each stream, monitored effect and lane layout, the 50 largest peaks are fitted with an exponential tail, that is, a generalized Pareto distribution with zero shape, and extrapolated from 30 days to Q117. The girder, section and lane layout of each stream are those with the largest simulated peak. All bridge, girder and effect columns share the conventions above; `bridge`, `system`, `span_m` and `n_girders` describe the deck.
 
 ### `q117_cells.csv`
 
-One row per stream, bridge–effect case and lane layout (8 × 30 × 4 = 960 rows). Within each row, the effect is the largest over the monitored sections and girders.
+One row per stream, bridge–effect case and lane layout (8 × 30 × 4 = 960 rows). Within each row, the section and girder are those with the largest simulated peak.
 
 - `stream`, `composition_group`, `stream_aadtt_dir`: simulated stream, its composition group (blank for `ROSSIGALI`) and directional AADTT (7,019 for the Rossigali reference flow).
 - `load_effect`, `unit`, `lane_layout`.
-- `governing_section`, `governing_girder`: section and girder that give the largest effect (girder 1 is at the deck edge; sections are `midspan`, `first_end_support`, `second_end_support`, `first_span_0.4L`, `second_span_0.4L` and `central_support`).
-- `threshold_u`, `n_exceedances`: common threshold and number of peaks above it.
+- `governing_section`, `governing_girder`: section and girder with the largest simulated peak (girder 1 is at the deck edge; sections are `midspan`, `first_end_support`, `second_end_support`, `first_span_0.4L`, `second_span_0.4L` and `central_support`).
+- `threshold_u`, `n_exceedances`: 50th largest peak of the stream, above which the tail is fitted, and the number of peaks used (50).
 - `max_observed_30d`: largest peak recorded in the 30 days.
-- `gpd_shape_xi`, `gpd_scale_sigma`: fitted generalized Pareto parameters. Values of about −1e-10 mean that the fit sits at the boundary ξ = 0 (exponential tail).
+- `gpd_shape_xi`, `gpd_scale_sigma`: shape (zero, exponential tail) and scale of the fitted tail, the scale being the mean excess of the 50 peaks over the threshold.
 - `q117`, `q117_over_max_observed`: characteristic effect and its ratio to the largest observed peak.
 - `tail_fraction_pct`: percentage of all recorded peaks above the threshold.
 - `ks_statistic`, `ks_critical`, `ks_pass`: Kolmogorov–Smirnov goodness-of-fit check of the tail.
-- `gpd_support_ok`: whether the extrapolated value lies within the support of the fitted distribution.
 
 ### `q117_cases.csv`
 
-One row per stream and bridge–effect case (8 × 30 = 240 rows): `q117` is the largest value over the four lane layouts, with the `governing_lane_layout`, `governing_section` and `governing_girder` that produce it.
+One row per stream and bridge–effect case (8 × 30 = 240 rows): `q117` is taken at the lane layout, section and girder with the largest simulated peak (`governing_lane_layout`, `governing_section` and `governing_girder`).
 
 ### `case_summary.csv`
 

@@ -1,0 +1,31 @@
+vehicle_class,n_records,model,body_components,tail_threshold_p95_t,tail_gpd_scale_t,tail_gpd_shape,lower_limit_t,upper_limit_t
+C1,5504,body + GPD tail,"gamma (1.000; mean 7.23 t, sd 2.44 t)",11.35,3.6396,2.0,1.81,16.9
+C2,64735,body + GPD tail,"rayleigh (1.000; mean 9.16 t, sd 3.45 t)",15.6,1.3471,-0.0619,2.01,27.39
+C3,81505,body + GPD tail,"weibull_min (1.000; mean 18.60 t, sd 4.99 t)",25.15,2.3255,0.0829,4.3,44.49
+C7,25205,body + GPD tail,"lognormal (0.219; mean 17.19 t, sd 2.90 t) + logistic (0.781; mean 28.33 t, sd 3.10 t)",32.55,2.0274,0.0609,6.49,53.36
+CR1,121,"single distribution (fewer than 1,000 records)","lognormal (1.000; mean 21.07 t, sd 4.75 t)",,,,5.87,51.81
+CR10,233,"single distribution (fewer than 1,000 records)","beta (0.524; mean 32.08 t, sd 4.46 t) + beta (0.476; mean 47.57 t, sd 3.78 t)",,,,10.59,75.14
+CR11,276,"single distribution (fewer than 1,000 records)","logistic (1.000; mean 53.42 t, sd 6.83 t)",,,,9.82,96.27
+CR4,332,"single distribution (fewer than 1,000 records)","normal (0.467; mean 22.50 t, sd 3.53 t) + rayleigh (0.533; mean 37.24 t, sd 5.94 t)",,,,8.01,78.33
+CR5,232,"single distribution (fewer than 1,000 records)","student_t (1.000; mean 43.58 t, sd 7.96 t)",,,,9.44,85.55
+CR6,740,"single distribution (fewer than 1,000 records)","frechet_min (0.981; mean 53.86 t, sd 4.75 t) + exponential (0.019; mean 66.71 t, sd 3.64 t)",,,,19.57,91.44
+CTS1,1538,body + GPD tail,"gumbel_min (1.000; mean 17.67 t, sd 2.96 t)",21.901,1.9978,0.0167,7.42,39.43
+CTS10,97880,body + GPD tail,"frechet_min (1.000; mean 44.88 t, sd 5.93 t)",51.85,1.412,0.1659,8.5,95.0
+CTS11,15150,body + GPD tail,"gumbel_min (1.000; mean 56.40 t, sd 4.89 t)",62.85,1.4723,0.0312,14.35,106.42
+CTS13,685,"single distribution (fewer than 1,000 records)","gumbel_min (1.000; mean 46.48 t, sd 6.06 t)",,,,13.59,84.17
+CTS15,23581,body + GPD tail,"frechet_min (1.000; mean 49.72 t, sd 5.93 t)",56.5,1.1878,0.0361,14.06,85.48
+CTS19,3375,body + GPD tail,"weibull_min (1.000; mean 31.77 t, sd 7.33 t)",42.1,1.5717,0.5736,7.51,74.23
+CTS2,7824,body + GPD tail,"rayleigh (0.771; mean 19.57 t, sd 2.66 t) + lognormal (0.229; mean 29.71 t, sd 2.99 t)",31.85,2.098,-0.0528,7.95,56.83
+CTS22,3813,body + GPD tail,"frechet_min (1.000; mean 52.36 t, sd 4.50 t)",57.544,1.3137,0.1005,6.83,105.09
+CTS3,1948,body + GPD tail,"gumbel_max (0.718; mean 20.90 t, sd 2.80 t) + student_t (0.282; mean 34.09 t, sd 3.60 t)",37.413,1.4932,0.1657,10.09,60.2
+CTS4,17827,body + GPD tail,"gumbel_min (1.000; mean 34.45 t, sd 7.34 t)",43.85,1.2973,0.145,8.61,70.49
+CTS5,2009,body + GPD tail,"frechet_min (1.000; mean 42.46 t, sd 3.23 t)",45.356,1.3352,-0.2716,8.15,76.46
+CTS6,966,"single distribution (fewer than 1,000 records)","frechet_min (1.000; mean 40.86 t, sd 6.61 t)",,,,10.92,76.72
+CTS8,1607,body + GPD tail,"rayleigh (0.396; mean 22.84 t, sd 2.77 t) + weibull_min (0.439; mean 35.45 t, sd 3.46 t) + frechet_max (0.166; mean 44.18 t, sd 1.90 t)",44.485,1.6237,0.1041,9.53,70.72
+CTSR6+,63441,body + GPD tail,"gumbel_min (1.000; mean 72.54 t, sd 4.86 t)",78.1,1.5021,0.2081,18.18,138.24
+CTSS11+,337,"single distribution (fewer than 1,000 records)","frechet_min (1.000; mean 61.24 t, sd 8.05 t)",,,,17.61,116.75
+CTSS12+,30611,body + GPD tail,"frechet_min (1.000; mean 71.87 t, sd 6.34 t)",79.3,2.0238,0.1721,14.9,147.61
+CTSS7,613,"single distribution (fewer than 1,000 records)","student_t (1.000; mean 36.83 t, sd 6.63 t)",,,,9.79,80.63
+CTSS8,36538,body + GPD tail,"laplace (1.000; mean 55.72 t, sd 4.55 t)",60.4,1.3085,0.2591,12.62,110.59
+CTSS8+,1432,body + GPD tail,"frechet_min (1.000; mean 55.33 t, sd 4.05 t)",59.373,1.2306,0.3844,12.22,111.7
+CTSSS7+,1141,body + GPD tail,"frechet_min (1.000; mean 74.24 t, sd 4.71 t)",79.35,1.4493,0.336,17.41,125.64

@@ -12,8 +12,8 @@ data/
 │   ├── 2021/                 Original traffic-count and UMO weighing workbooks
 │   └── 2023/                 Original traffic-count and UMO weighing workbooks
 ├── processed/
-│   ├── 2021/                 Consolidated 2021 traffic tables and fitted models
-│   ├── 2023/                 Consolidated 2023 traffic tables and fitted models
+│   ├── 2021/                 Consolidated 2021 traffic tables and axle-load regressions
+│   ├── 2023/                 Consolidated 2023 traffic tables, axle-load regressions and gross-weight models
 │   ├── diagnostics/          Coverage and adequacy summaries
 │   ├── traffic-contracts/    State traffic inputs used by the structural simulator
 │   └── state_groups_aadtt.csv  Composition group and busiest-corridor AADTT by federal unit
@@ -36,14 +36,14 @@ For each campaign edition, the principal reusable outputs are:
 - `vmda_selected_all_ufs.csv`: retained high-volume monitored federal-road corridors and directional truck counts;
 - `umo_ucp_within_group_all_ufs.csv`: intra-group class proportions balanced across mobile weighing units;
 - `umo_qfv_share_scaled_all_ufs.csv`: integrated state vehicle-class shares combining counts and weighing;
-- `gvw_distribution_fits_station_balanced.xlsx`: station-balanced class-specific gross-vehicle-weight fits;
-- `axle_group_load_regressions.csv`: fitted axle-group load relationships.
+- `axle_group_load_regressions.csv`: fitted axle-group load relationships;
+- `gvw_models.csv` (2023 only): gross-vehicle-weight models of the 30 simulated classes, fitted to the national class distributions with every record weighted equally.
 
 `state_groups_aadtt.csv` lists, for each federal unit, the six-or-more-axle share, the composition group (light, intermediate or heavy) and the directional AADTT of its busiest monitored corridor in both editions.
 
 ## Structural sensitivity application
 
-Seven state traffic streams (PB, RJ, SP corridors, MG, PR, SC and MT) and the traffic of Rossigali (2013) were simulated in free flow over twelve girder bridges, in four lane layouts (2o, 2s, 3s, 3o), for 30 days each. For each case, the peaks above a threshold common to all streams were fitted with a generalized Pareto distribution with non-positive shape parameter and extrapolated to Q117, the effect with a 35% probability of exceedance in 50 years (a 117-year return period). The files in `data/simulation-results/` are frozen exports of these results and reproduce the figures and tables of the manuscript.
+Seven state traffic streams (PB, RJ, SP corridors, MG, PR, SC and MT) and the traffic of Rossigali (2013) were simulated in free flow over twelve girder bridges, in four lane layouts (2o, 2s, 3s, 3o), for 30 days each. For each stream and effect, an exponential tail (a generalized Pareto distribution with zero shape) was fitted to the 50 largest peaks and extrapolated to Q117, the effect with a 35% probability of exceedance in 50 years (a 117-year return period), at the girder and lane layout with the largest simulated peak. The files in `data/simulation-results/` are frozen exports of these results and reproduce the figures and numbers of the manuscript.
 
 Definitions, units, and column descriptions are provided in [`docs/DATA_DICTIONARY.md`](docs/DATA_DICTIONARY.md).
 
